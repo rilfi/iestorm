@@ -26,6 +26,7 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
     SerialAnalyserController tokenizerPR;
     private long initiatatedTime;
     private long count;
+    Corpus corpus = null;
 
     private SerialAnalyserController loadController() {
         SerialAnalyserController annieController = null;
@@ -53,6 +54,11 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
         _collector = outputCollector;
         count=0;
+        try {
+            corpus=Factory.newCorpus("SingleTweet");
+        } catch (ResourceInstantiationException e) {
+            e.printStackTrace();
+        }
         ThreadLocal<SerialAnalyserController> controller = new ThreadLocal<SerialAnalyserController>() {
 
             protected SerialAnalyserController initialValue() {
@@ -74,15 +80,12 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
        // Map<String,Object>emitingMap=(Map<String, Object>) tuple.getValue(0);
         //System.out.println("---#############------"+emitingMap.keySet());
        // String tweet = emitingMap.get("tweet").toString();
-        Corpus corpus = null;
+
         long beforeProcessTS = System.nanoTime()-(24*60*60*1000*1000*1000);
         boolean isTerminated=false;
         try {
-            corpus = Factory.newCorpus("SingleTweetCorpus");
 
-            Document doc = null;
-
-            doc = Factory.newDocument(tv.getTweet());
+            Document doc = Factory.newDocument(tv.getTweet());
 
             corpus.add(doc);
             tokenizerPR.setCorpus(corpus);
@@ -100,9 +103,9 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
             tv.setTokenizerTT(timeTaken);
             tv.setTokenizerAT(averageTS);
             _collector.emit( new Values(tv));
-           // _collector.ack(tuple);
-           // corpus.clear();
-           // doc.cleanup();
+            _collector.ack(tuple);
+           Factory.deleteResource(doc);
+
 
         } catch (ExecutionException e) {
             e.printStackTrace();
@@ -111,9 +114,13 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
             e.printStackTrace();
             isTerminated=true;
         }
+        catch (Exception e){
+            e.printStackTrace();
+            isTerminated=true;
+        }
         finally {
             if(isTerminated){
-               // _collector.ack(tuple);
+                _collector.fail(tuple);
             }
 
         }

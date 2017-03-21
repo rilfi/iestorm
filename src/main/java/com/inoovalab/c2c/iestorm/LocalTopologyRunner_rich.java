@@ -40,12 +40,12 @@ public class LocalTopologyRunner_rich {
     config.setDebug(true);
     config.registerSerialization(TweetEvent.class);
       config.put("tweetFile", "tweet50.txt");
-      config.put("persist.file", "output50.txt");
+      config.put("persist.file", "output50_1.txt");
 
     LocalCluster localCluster = new LocalCluster();
     localCluster.submitTopology("credit-card-rich_topology", config, builder.createTopology());
 
-    Utils.sleep(600000);
+    Utils.sleep(10000);
     localCluster.shutdown();
   }
 }

@@ -98,16 +98,22 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
             tv.setGazetteerTT(timeTaken);
             tv.setGazetteerAT(averageTS);
            _collector.emit(new Values(tv));
-            //_collector.ack(tuple);
-            //corpus.clear();
+            _collector.ack(tuple);
+            Factory.deleteResource(doc);
             //doc.cleanup();
 
         } catch (ExecutionException e) {
             e.printStackTrace();
             isTerminated = true;
-        } finally {
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            isTerminated=true;
+        }
+        finally
+        {
             if (isTerminated) {
-               // _collector.ack(tuple);
+                _collector.fail(tuple);
             }
 
         }

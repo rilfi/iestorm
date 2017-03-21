@@ -60,7 +60,7 @@ public class Simulated_Tweet_Spout extends BaseRichSpout {
                 tv.setStarted(started);
                 tv.setTubleStarted(System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000));
                 tv.setMsgId(++msgId);
-            outputCollector.emit(new Values(tv));
+            outputCollector.emit(new Values(tv),msgId);
 
         }
 

@@ -158,7 +158,6 @@ public class Annotation_rich_Bolt extends BaseRichBolt {
     public void execute(Tuple tuple) {
         TweetEvent tv=(TweetEvent)tuple.getValue(0);
         Document doc = tv.getDocument();
-        Corpus corpus = null;
         long beforeProcessTS = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
         boolean isTerminated = false;
         try {
@@ -174,7 +173,7 @@ public class Annotation_rich_Bolt extends BaseRichBolt {
                 tv.setAnnotationTT(timeTaken);
                 tv.setAnnotationAT(averageTS);
                _collector.emit( new Values(tv));
-               // _collector.ack(tuple);
+                _collector.ack(tuple);
 
             }
             else {
@@ -188,7 +187,7 @@ public class Annotation_rich_Bolt extends BaseRichBolt {
         }
         finally {
             if (isTerminated) {
-               // _collector.ack(tuple);
+                _collector.fail(tuple);
             }
 
         }

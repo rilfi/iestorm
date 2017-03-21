@@ -18,12 +18,14 @@ import java.util.Map;
 public class Persist_rich_Bolt extends BaseRichBolt {
     OutputCollector _collector;
     private BufferedWriter writer;
+    boolean isTerminated;
 
     @Override
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
         String filepath = (String) map.get("persist.file");
         String absoluteFileName = filepath + "." + topologyContext.getThisTaskIndex();
         this._collector = outputCollector;
+        isTerminated=false;
         try {
             writer = new BufferedWriter(new FileWriter(absoluteFileName));
         } catch (IOException e) {
@@ -40,12 +42,23 @@ public class Persist_rich_Bolt extends BaseRichBolt {
             writer.newLine();
 
             writer.flush();
-           // _collector.ack(tuple);
+           _collector.ack(tuple);
         } catch (IOException e) {
             e.printStackTrace();
-
-           // _collector.ack(tuple);
         }
+        catch (Exception e){
+            e.printStackTrace();
+            isTerminated=true;
+
+        }
+        finally {
+            if(isTerminated){
+                _collector.fail(tuple);
+            }
+        }
+
+
+
 
 
     }
