@@ -74,8 +74,8 @@
       <file leaf-file-name="IeStormTopology.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2002">
-              <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+            <state relative-caret-position="132">
+              <caret line="59" column="4" lean-forward="true" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -742,7 +742,7 @@
       <workItem from="1489899426956" duration="24129000" />
       <workItem from="1489934539461" duration="31549000" />
       <workItem from="1490079960412" duration="1847000" />
-      <workItem from="1490084658111" duration="20206000" />
+      <workItem from="1490084658111" duration="20434000" />
     </task>
     <task id="LOCAL-00001" summary="just testing by only using the tweet simulator and file persist">
       <created>1490089572119</created>
@@ -870,11 +870,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490121273117</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="exception not thron">
+      <created>1490121426508</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1490121426508</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77731000" />
+    <option name="totallyTimeSpent" value="77959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2409" y="46" width="2418" height="1318" extended-state="6" />
@@ -1288,8 +1295,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2002">
-          <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        <state relative-caret-position="132">
+          <caret line="59" column="4" lean-forward="true" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
           <folding />
         </state>
       </provider>
