@@ -3,6 +3,7 @@ package com.inoovalab.c2c.iestorm;
 
 import com.inoovalab.c2c.iestorm.rich_topology.*;
 import gate.Gate;
+import gate.util.GateException;
 import org.apache.storm.Config;
 import org.apache.storm.StormSubmitter;
 import org.apache.storm.generated.*;
@@ -11,6 +12,7 @@ import org.apache.storm.utils.NimbusClient;
 import org.apache.storm.utils.Utils;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.util.Map;
 
 public class IeStormTopology {
@@ -66,10 +68,20 @@ public class IeStormTopology {
         client.killTopologyWithOpts(name, opts);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
         Gate.setGateHome(new File("/opt/gate-8.3-build5704-ALL"));
-        Gate.init();
-        Gate.getCreoleRegister().registerDirectories(new File(Gate.getPluginsHome(), "ANNIE").toURI().toURL());
+        try {
+            Gate.init();
+        } catch (GateException e) {
+            e.printStackTrace();
+        }
+        try {
+            Gate.getCreoleRegister().registerDirectories(new File(Gate.getPluginsHome(), "ANNIE").toURI().toURL());
+        } catch (GateException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
 
 
         TopologyBuilder builder = new TopologyBuilder();
@@ -93,7 +105,15 @@ public class IeStormTopology {
         }
 
         conf.setNumWorkers(1);
-        StormSubmitter.submitTopologyWithProgressBar(name, conf, builder.createTopology());
+        try {
+            StormSubmitter.submitTopologyWithProgressBar(name, conf, builder.createTopology());
+        } catch (AlreadyAliveException e) {
+            e.printStackTrace();
+        } catch (InvalidTopologyException e) {
+            e.printStackTrace();
+        } catch (AuthorizationException e) {
+            e.printStackTrace();
+        }
 
         Map clusterConf = Utils.readStormConfig();
         clusterConf.putAll(Utils.readCommandLineOpts());
@@ -101,9 +121,21 @@ public class IeStormTopology {
 
         //Sleep for 5 mins
         for (int i = 0; i < 10; i++) {
-            Thread.sleep(30 * 1000);
-            printMetrics(client, name);
+            try {
+                Thread.sleep(30 * 1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            try {
+                printMetrics(client, name);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        kill(client, name);
+        try {
+            kill(client, name);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
