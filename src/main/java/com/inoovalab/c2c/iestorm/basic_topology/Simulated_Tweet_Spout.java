@@ -1,4 +1,4 @@
-package com.inoovalab.c2c.iestorm.topology;
+package com.inoovalab.c2c.iestorm.basic_topology;
 
 
 import com.inoovalab.c2c.iestorm.TweetEvent;

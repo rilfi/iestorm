@@ -1,13 +1,11 @@
-package com.inoovalab.c2c.iestorm.topology;
+package com.inoovalab.c2c.iestorm.basic_topology;
 
 import com.inoovalab.c2c.iestorm.TweetEvent;
 import gate.*;
-import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.BasicOutputCollector;
 import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.topology.base.BaseBasicBolt;
-import org.apache.storm.topology.base.BaseRichBolt;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
 import org.apache.storm.tuple.Values;
