@@ -96,6 +96,7 @@ public class IeStormTopology {
         Config conf = new Config();
         conf.registerMetricsConsumer(org.apache.storm.metric.LoggingMetricsConsumer.class);
        // conf.put("tweetFile", "tweet50.txt");
+        conf.setDebug(true);
         conf.put("persist.file", "output50.txt");
 
 
