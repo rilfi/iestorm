@@ -81,14 +81,15 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
         //System.out.println("---#############------"+emitingMap.keySet());
        // String tweet = emitingMap.get("tweet").toString();
 
+
         long beforeProcessTS = System.nanoTime()-(24*60*60*1000*1000*1000);
         boolean isTerminated=false;
         try {
-
+            Corpus corpus=Factory.newCorpus("Copus"+tv.getMsgId());
             Document doc = Factory.newDocument(tv.getTweet());
 
-            //corpus.add(doc);
-            tokenizerPR.setDocument(doc);
+            corpus.add(doc);
+            tokenizerPR.setCorpus(corpus);
 
             tokenizerPR.execute();
 
@@ -105,6 +106,7 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
             _collector.emit( new Values(tv));
             _collector.ack(tuple);
            Factory.deleteResource(doc);
+           Factory.deleteResource(corpus);
 
 
         } catch (ExecutionException e) {
