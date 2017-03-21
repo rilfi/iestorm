@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -26,6 +27,8 @@ public class Simulated_Tweet_Spout extends BaseRichSpout {
     private long msgId = 0;
     private String fileName;
     private long started;
+    List<String> tweets;
+    Iterator<String> itr;
     private SpoutOutputCollector outputCollector;
 
 
@@ -35,6 +38,13 @@ public class Simulated_Tweet_Spout extends BaseRichSpout {
         this.outputCollector = spoutOutputCollector;
         this.fileName = (String) map.get("tweetFile");
         started=System.nanoTime()-(24*60*60*1000*1000*1000);
+        List<String> tweets = null;
+        try {
+            tweets = Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        itr = tweets.iterator();
         System.out.println(fileName);
 
     }
@@ -42,9 +52,12 @@ public class Simulated_Tweet_Spout extends BaseRichSpout {
     @Override
     public void nextTuple() {
        // Map<String,Object>emitingMap= new HashMap<>();
-        try {
-            List<String> tweets = Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8);
-            for(String tweet:tweets) {
+        if (itr.hasNext()) {
+            outputCollector.emit(new Values(itr.next()));
+
+        }
+
+
 
 
                 /*TweetEvent tv = new TweetEvent();
@@ -52,12 +65,10 @@ public class Simulated_Tweet_Spout extends BaseRichSpout {
                 tv.setStarted(started);
                 tv.setTubleStarted(System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000));
                 tv.setMsgId(msgId);*/
-                outputCollector.emit(new Values(tweet));
-            }
+                //outputCollector.emit(new Values(tweet));
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+
 /*        Path filePath = Paths.get(fileName);
         System.out.println(filePath.toAbsolutePath().toString());
         try (Stream<String> tweets = Files.lines(filePath)) {
