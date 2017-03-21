@@ -1,8 +1,7 @@
 package com.inoovalab.c2c.iestorm;
 
 
-import com.inoovalab.c2c.iestorm.rich_topology.*;
-import com.inoovalab.c2c.iestorm.topology.*;
+import com.inoovalab.c2c.iestorm.basic_topology.*;
 import gate.Gate;
 import gate.util.GateException;
 import org.apache.storm.Config;
@@ -32,10 +31,10 @@ public class LocalTopologyRunner {
 
         builder.setSpout("Simulated_Tweet", new Simulated_Tweet_Spout(), 1);
 
-        builder.setBolt("Tokenizer_Bolt", new Tokenizer_Bolt(), 1).shuffleGrouping("Simulated_Tweet");
-        builder.setBolt("Gazetteer_Bolt", new Gazetteer_Bolt(), 4).shuffleGrouping("Tokenizer_Bolt");
-        builder.setBolt("Annotation_Bolt", new Annotation_Bolt(), 4).shuffleGrouping("Gazetteer_Bolt");
-        builder.setBolt("Persist_Bolt", new Persist_Bolt(), 1).shuffleGrouping("Annotation_Bolt");
+        //builder.setBolt("Tokenizer_Bolt", new Tokenizer_Bolt(), 1).shuffleGrouping("Simulated_Tweet");
+        //builder.setBolt("Gazetteer_Bolt", new Gazetteer_Bolt(), 4).shuffleGrouping("Tokenizer_Bolt");
+       // builder.setBolt("Annotation_Bolt", new Annotation_Bolt(), 4).shuffleGrouping("Gazetteer_Bolt");
+        builder.setBolt("Persist_Bolt", new Persist_Bolt(), 1).shuffleGrouping("Simulated_Tweet");
 
         Config config = new Config();
         config.setDebug(true);
