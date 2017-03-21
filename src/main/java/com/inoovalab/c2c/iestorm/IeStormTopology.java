@@ -1,7 +1,7 @@
 
 package com.inoovalab.c2c.iestorm;
 
-import com.inoovalab.c2c.iestorm.topology.*;
+import com.inoovalab.c2c.iestorm.rich_topology.*;
 import gate.Gate;
 import org.apache.storm.Config;
 import org.apache.storm.StormSubmitter;
@@ -29,7 +29,7 @@ public class IeStormTopology {
             }
         }
         if (id == null) {
-            throw new Exception("Could not find a topology named "+name);
+            throw new Exception("Could not find a rich_topology named "+name);
         }
         TopologyInfo info = client.getTopologyInfo(id);
         int uptime = info.get_uptime_secs();
@@ -74,12 +74,12 @@ public class IeStormTopology {
 
         TopologyBuilder builder = new TopologyBuilder();
 
-        builder.setSpout("Simulated_Tweet", new Simulated_TweetSpout(), 1);
+        builder.setSpout("Simulated_Tweet", new Simulated_Tweet_rich_Spout(), 1);
 
-        builder.setBolt("TokenizerBolt", new TokenizerBolt(), 4).shuffleGrouping("Simulated_Tweet");
-        builder.setBolt("GazetteerBolt", new GazetteerBolt(), 4).shuffleGrouping("TokenizerBolt");
-        builder.setBolt("AnnotationBolt", new AnnotationBolt(), 4).shuffleGrouping("GazetteerBolt");
-        builder.setBolt("PersistBolt", new PersistBolt(), 4).shuffleGrouping("AnnotationBolt");
+        builder.setBolt("Tokenizer_Bolt", new Tokenizer_rich_Bolt(), 4).shuffleGrouping("Simulated_Tweet");
+        builder.setBolt("Gazetteer_Bolt", new Gazetteer_rich_Bolt(), 4).shuffleGrouping("Tokenizer_Bolt");
+        builder.setBolt("Annotation_Bolt", new Annotation_rich_Bolt(), 4).shuffleGrouping("Gazetteer_Bolt");
+        builder.setBolt("Persist_Bolt", new Persist_rich_Bolt(), 4).shuffleGrouping("Annotation_Bolt");
 
         Config conf = new Config();
         conf.registerMetricsConsumer(org.apache.storm.metric.LoggingMetricsConsumer.class);
