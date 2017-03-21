@@ -37,14 +37,19 @@ public class Simulated_Tweet_rich_Spout extends BaseRichSpout {
     @Override
     public void open(Map map, TopologyContext topologyContext, SpoutOutputCollector spoutOutputCollector) {
         this.outputCollector = spoutOutputCollector;
-        this.fileName = (String) map.get("tweetFile");
+       // this.fileName = (String) map.get("tweetFile");
         started=System.nanoTime()-(24*60*60*1000*1000*1000);
-        List<String> tweets = null;
-        try {
+        List<String> tweets = new ArrayList<>();
+        int i=0;
+        while (i<100){
+            tweets.add("lg gx im selling");
+        }
+
+        /*try {
             tweets = Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         itr = tweets.iterator();
         System.out.println(fileName);
 
@@ -53,7 +58,7 @@ public class Simulated_Tweet_rich_Spout extends BaseRichSpout {
     @Override
     public void nextTuple() {
         // Map<String,Object>emitingMap= new HashMap<>();
-        if (itr.hasNext()) {
+       if (itr.hasNext()) {
 
 
             TweetEvent tv = new TweetEvent();
