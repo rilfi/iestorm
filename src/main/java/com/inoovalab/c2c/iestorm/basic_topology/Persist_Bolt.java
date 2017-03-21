@@ -38,10 +38,11 @@ public class Persist_Bolt extends BaseBasicBolt {
 
     @Override
     public void execute(Tuple tuple, BasicOutputCollector basicOutputCollector) {
-        TweetEvent tv = (TweetEvent) tuple.getValue(0);
+        //TweetEvent tv = (TweetEvent) tuple.getValue(0);
+        String tweet=(String)tuple.getValue(0);
         try {
 
-            writer.write(tv.toString());
+            writer.write(tweet);
             writer.newLine();
 
             writer.flush();
