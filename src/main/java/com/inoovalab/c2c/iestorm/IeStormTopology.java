@@ -5,6 +5,7 @@ import com.inoovalab.c2c.iestorm.rich_topology.*;
 import gate.Gate;
 import gate.util.GateException;
 import org.apache.storm.Config;
+import org.apache.storm.LocalCluster;
 import org.apache.storm.StormSubmitter;
 import org.apache.storm.generated.*;
 import org.apache.storm.topology.TopologyBuilder;
@@ -109,7 +110,9 @@ public class IeStormTopology implements Serializable {
         }
 
         conf.setNumWorkers(1);
-        try {
+        LocalCluster localCluster = new LocalCluster();
+        localCluster.submitTopology(name, conf, builder.createTopology());
+        /*try {
             StormSubmitter.submitTopologyWithProgressBar(name, conf, builder.createTopology());
         } catch (AlreadyAliveException e) {
             e.printStackTrace();
@@ -117,14 +120,21 @@ public class IeStormTopology implements Serializable {
             e.printStackTrace();
         } catch (AuthorizationException e) {
             e.printStackTrace();
+        }*/
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
-        Map clusterConf = Utils.readStormConfig();
+
+       /* Map clusterConf = Utils.readStormConfig();
         clusterConf.putAll(Utils.readCommandLineOpts());
-        Nimbus.Client client = NimbusClient.getConfiguredClient(clusterConf).getClient();
+        Nimbus.Client client = NimbusClient.getConfiguredClient(clusterConf).getClient();*/
+
 
         //Sleep for 5 mins
-        for (int i = 0; i < 10; i++) {
+        /*for (int i = 0; i < 10; i++) {
             try {
                 Thread.sleep(30 * 1000);
             } catch (InterruptedException e) {
@@ -135,11 +145,11 @@ public class IeStormTopology implements Serializable {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-        try {
+        }*/
+        /*try {
             kill(client, name);
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }
