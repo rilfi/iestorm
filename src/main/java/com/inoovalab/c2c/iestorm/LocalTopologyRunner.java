@@ -31,21 +31,21 @@ public class LocalTopologyRunner {
 
         builder.setSpout("Simulated_Tweet", new Simulated_Tweet_Spout(), 1);
 
-        //builder.setBolt("Tokenizer_Bolt", new Tokenizer_Bolt(), 1).shuffleGrouping("Simulated_Tweet");
-        //builder.setBolt("Gazetteer_Bolt", new Gazetteer_Bolt(), 4).shuffleGrouping("Tokenizer_Bolt");
-       // builder.setBolt("Annotation_Bolt", new Annotation_Bolt(), 4).shuffleGrouping("Gazetteer_Bolt");
+        builder.setBolt("Tokenizer_Bolt", new Tokenizer_Bolt(), 1).shuffleGrouping("Simulated_Tweet");
+        builder.setBolt("Gazetteer_Bolt", new Gazetteer_Bolt(), 1).shuffleGrouping("Tokenizer_Bolt");
+        builder.setBolt("Annotation_Bolt", new Annotation_Bolt(), 1).shuffleGrouping("Gazetteer_Bolt");
         builder.setBolt("Persist_Bolt", new Persist_Bolt(), 1).shuffleGrouping("Simulated_Tweet");
 
         Config config = new Config();
-        //config.setDebug(true);
-        //config.registerSerialization(TweetEvent.class);
-        config.put("tweetFile", "tweet1.txt");
+        config.setDebug(true);
+        config.registerSerialization(TweetEvent.class);
+        config.put("tweetFile", "tweet50.txt");
         config.put("persist.file", "output50.txt");
 
         LocalCluster localCluster = new LocalCluster();
         localCluster.submitTopology("credit-card-rich_topology", config, builder.createTopology());
 
-        Utils.sleep(600000);
+        Utils.sleep(10000);
         localCluster.shutdown();
     }
 }

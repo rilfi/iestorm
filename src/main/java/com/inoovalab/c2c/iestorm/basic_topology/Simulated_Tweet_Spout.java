@@ -53,18 +53,21 @@ public class Simulated_Tweet_Spout extends BaseRichSpout {
     public void nextTuple() {
        // Map<String,Object>emitingMap= new HashMap<>();
         if (itr.hasNext()) {
-            outputCollector.emit(new Values(itr.next()));
+
+
+             TweetEvent tv = new TweetEvent();
+                tv.setTweet(itr.next());
+                tv.setStarted(started);
+                tv.setTubleStarted(System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000));
+                tv.setMsgId(++msgId);
+            outputCollector.emit(new Values(tv));
 
         }
 
 
 
 
-                /*TweetEvent tv = new TweetEvent();
-                tv.setTweet(tweet);
-                tv.setStarted(started);
-                tv.setTubleStarted(System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000));
-                tv.setMsgId(msgId);*/
+
                 //outputCollector.emit(new Values(tweet));
 
 
