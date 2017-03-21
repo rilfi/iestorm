@@ -37,8 +37,8 @@ public class LocalTopologyRunner_rich {
       builder.setBolt("Persist_Bolt", new Persist_rich_Bolt(), 1).shuffleGrouping("Annotation_Bolt");
 
       Config config = new Config();
-    config.setDebug(true);
-    config.registerSerialization(TweetEvent.class);
+      config.setDebug(true);
+      config.registerSerialization(TweetEvent.class);
       config.put("tweetFile", "tweet50.txt");
       config.put("persist.file", "output50_1.txt");
 
