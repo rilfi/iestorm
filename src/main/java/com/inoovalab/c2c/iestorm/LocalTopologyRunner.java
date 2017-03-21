@@ -40,7 +40,7 @@ public class LocalTopologyRunner {
         Config config = new Config();
         config.setDebug(true);
         config.registerSerialization(TweetEvent.class);
-        config.put("tweetFile", "tweet50.txt");
+        config.put("tweetFile", "tweet1.txt");
         config.put("persist.file", "output50.txt");
 
         LocalCluster localCluster = new LocalCluster();
