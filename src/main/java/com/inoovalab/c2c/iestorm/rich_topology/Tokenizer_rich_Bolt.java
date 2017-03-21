@@ -26,7 +26,7 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
     SerialAnalyserController tokenizerPR;
     private long initiatatedTime;
     private long count;
-    Corpus corpus = null;
+    //Corpus corpus = null;
 
     private SerialAnalyserController loadController() {
         SerialAnalyserController annieController = null;
@@ -54,11 +54,11 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
         _collector = outputCollector;
         count=0;
-        try {
+        /*try {
             corpus=Factory.newCorpus("SingleTweet");
         } catch (ResourceInstantiationException e) {
             e.printStackTrace();
-        }
+        }*/
         ThreadLocal<SerialAnalyserController> controller = new ThreadLocal<SerialAnalyserController>() {
 
             protected SerialAnalyserController initialValue() {
@@ -87,8 +87,8 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
 
             Document doc = Factory.newDocument(tv.getTweet());
 
-            corpus.add(doc);
-            tokenizerPR.setCorpus(corpus);
+            //corpus.add(doc);
+            tokenizerPR.setDocument(doc);
 
             tokenizerPR.execute();
 
