@@ -12,10 +12,11 @@ import org.apache.storm.utils.NimbusClient;
 import org.apache.storm.utils.Utils;
 
 import java.io.File;
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.util.Map;
 
-public class IeStormTopology {
+public class IeStormTopology implements Serializable {
 
 
 
@@ -69,8 +70,9 @@ public class IeStormTopology {
     }
 
     public static void main(String[] args)  {
-        Gate.setGateHome(new File("/opt/gate-8.3-build5704-ALL"));
+
         try {
+            Gate.setGateHome(new File("/opt/gate-8.3-build5704-ALL"));
             Gate.init();
         } catch (GateException e) {
             e.printStackTrace();
