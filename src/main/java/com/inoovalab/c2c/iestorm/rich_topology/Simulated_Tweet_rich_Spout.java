@@ -42,6 +42,7 @@ public class Simulated_Tweet_rich_Spout extends BaseRichSpout {
         List<String> tweets = new ArrayList<>();
         int i=0;
         while (i<100){
+            i++;
             tweets.add("lg gx im selling");
         }
 
