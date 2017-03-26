@@ -104,7 +104,7 @@ public class IeStormTopology implements Serializable {
         conf.put("persist.file", "output50.txt");
 
 
-        String name = "wc-test";
+        String name = "IEStorm";
         if (args != null && args.length > 0) {
             name = args[0];
         }
@@ -121,11 +121,8 @@ public class IeStormTopology implements Serializable {
         } catch (AuthorizationException e) {
             e.printStackTrace();
         }*/
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Utils.sleep(10000);
+        localCluster.shutdown();
 
 
        /* Map clusterConf = Utils.readStormConfig();
