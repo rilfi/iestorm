@@ -87,8 +87,8 @@ public class IeStormTopology implements Serializable {
         builder.setSpout("Simulated_Tweet", new Simulated_Tweet_rich_Spout(), 1);
 
         builder.setBolt("Tokenizer_Bolt", new Tokenizer_rich_Bolt(), 1).shuffleGrouping("Simulated_Tweet");
-        // builder.setBolt("Gazetteer_Bolt", new Gazetteer_rich_Bolt(), 1).shuffleGrouping("Tokenizer_Bolt");
-        builder.setBolt("Annotation_Bolt", new Annotation_rich_Bolt(), 1).shuffleGrouping("Tokenizer_Bolt");
+        builder.setBolt("Gazetteer_Bolt", new Gazetteer_rich_Bolt(), 1).shuffleGrouping("Tokenizer_Bolt");
+        builder.setBolt("Annotation_Bolt", new Annotation_rich_Bolt(), 1).shuffleGrouping("Gazetteer_Bolt");
         builder.setBolt("Persist_Bolt", new Persist_rich_Bolt(), 1).shuffleGrouping("Annotation_Bolt");
 
         Config conf = new Config();
@@ -105,7 +105,9 @@ public class IeStormTopology implements Serializable {
         }
 
         conf.setNumWorkers(1);
-        StormSubmitter.submitTopologyWithProgressBar(name, conf, builder.createTopology());
+       // StormSubmitter.submitTopologyWithProgressBar(name, conf, builder.createTopology());
+        LocalCluster localCluster = new LocalCluster();
+        localCluster.submitTopology(name, conf, builder.createTopology());
 
         /*Utils.sleep(100000);
         localCluster.shutdown();*/
@@ -114,6 +116,8 @@ public class IeStormTopology implements Serializable {
         Map clusterConf = Utils.readStormConfig();
         clusterConf.putAll(Utils.readCommandLineOpts());
         Nimbus.Client client = NimbusClient.getConfiguredClient(clusterConf).getClient();
+
+
 
 
         //Sleep for 5 mins
