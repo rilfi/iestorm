@@ -121,7 +121,7 @@ public class IeStormTopology implements Serializable {
 
 
         //Sleep for 5 mins
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 5; i++) {
             Thread.sleep(30 * 1000);
             printMetrics(client, name);
         }

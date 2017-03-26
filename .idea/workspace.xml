@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2ed566b5-c158-4cc9-be3e-b60fe09d822e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" afterPath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -80,8 +81,8 @@
       <file leaf-file-name="IeStormTopology.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="107" column="9" lean-forward="false" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
+            <state relative-caret-position="493">
+              <caret line="123" column="29" lean-forward="false" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -137,6 +138,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <push-targets>
+      <push-target-info repo="$PROJECT_DIR$" source="master" target-remote="origin" target-branch="temp" />
+    </push-targets>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -780,7 +784,7 @@
       <workItem from="1489934539461" duration="31549000" />
       <workItem from="1490079960412" duration="1847000" />
       <workItem from="1490084658111" duration="21784000" />
-      <workItem from="1490500467038" duration="9541000" />
+      <workItem from="1490500467038" duration="10197000" />
     </task>
     <task id="LOCAL-00001" summary="just testing by only using the tweet simulator and file persist">
       <created>1490089572119</created>
@@ -971,11 +975,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490542945118</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="to a new branch">
+      <created>1490543279417</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1490543279417</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88850000" />
+    <option name="totallyTimeSpent" value="89506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
@@ -1066,7 +1077,8 @@
     <MESSAGE value="increase sleep time" />
     <MESSAGE value="with print matrix" />
     <MESSAGE value="local Topology" />
-    <option name="LAST_COMMIT_MESSAGE" value="local Topology" />
+    <MESSAGE value="to a new branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="to a new branch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1463,8 +1475,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="107" column="9" lean-forward="false" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
+        <state relative-caret-position="493">
+          <caret line="123" column="29" lean-forward="false" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="29" />
           <folding />
         </state>
       </provider>
