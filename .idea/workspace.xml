@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ed566b5-c158-4cc9-be3e-b60fe09d822e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/IeStormTopology.class" afterPath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/IeStormTopology.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/LocalTopologyRunner.class" afterPath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/LocalTopologyRunner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/LocalTopologyRunner_rich.class" afterPath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/LocalTopologyRunner_rich.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/rich_topology/Annotation_rich_Bolt.class" afterPath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/rich_topology/Annotation_rich_Bolt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/rich_topology/Gazetteer_rich_Bolt.class" afterPath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/rich_topology/Gazetteer_rich_Bolt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/rich_topology/Persist_rich_Bolt.class" afterPath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/rich_topology/Persist_rich_Bolt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.class" afterPath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt$1.class" afterPath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt.class" afterPath="$PROJECT_DIR$/target/classes/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" afterPath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -90,7 +80,7 @@
       <file leaf-file-name="IeStormTopology.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
+            <state relative-caret-position="141">
               <caret line="107" column="9" lean-forward="false" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
               <folding />
             </state>
@@ -790,7 +780,7 @@
       <workItem from="1489934539461" duration="31549000" />
       <workItem from="1490079960412" duration="1847000" />
       <workItem from="1490084658111" duration="21784000" />
-      <workItem from="1490500467038" duration="9216000" />
+      <workItem from="1490500467038" duration="9541000" />
     </task>
     <task id="LOCAL-00001" summary="just testing by only using the tweet simulator and file persist">
       <created>1490089572119</created>
@@ -974,11 +964,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490541859245</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="local Topology">
+      <created>1490542945118</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1490542945118</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88525000" />
+    <option name="totallyTimeSpent" value="88850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
@@ -1068,7 +1065,8 @@
     <MESSAGE value="after bold correction" />
     <MESSAGE value="increase sleep time" />
     <MESSAGE value="with print matrix" />
-    <option name="LAST_COMMIT_MESSAGE" value="with print matrix" />
+    <MESSAGE value="local Topology" />
+    <option name="LAST_COMMIT_MESSAGE" value="local Topology" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1465,7 +1463,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
+        <state relative-caret-position="141">
           <caret line="107" column="9" lean-forward="false" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
           <folding />
         </state>
