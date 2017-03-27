@@ -24,7 +24,7 @@ public class Persist_rich_Bolt extends BaseRichBolt {
     @Override
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
         String filepath = (String) map.get("persist.file");
-        count=0;
+        count=1;
         String absoluteFileName = filepath + "." + topologyContext.getThisTaskIndex();
         this._collector = outputCollector;
         isTerminated=false;
@@ -45,7 +45,8 @@ public class Persist_rich_Bolt extends BaseRichBolt {
         try {
             long tupleEnded=System.nanoTime()-(24 * 60 * 60 * 1000 * 1000 * 1000);
             long tupleconsumedTime=tupleEnded-tv.getTubleStarted();
-            long avarageTime=(tupleEnded-tv.getStarted())/++count;
+            long avarageTime=(tupleEnded-tv.getStarted())/count;
+            count++;
 
             writer.write(tv.toString()+","+tupleEnded+","+tupleconsumedTime+","+avarageTime);
             writer.newLine();

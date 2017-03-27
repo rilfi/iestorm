@@ -161,6 +161,7 @@ public class Annotation_rich_Bolt extends BaseRichBolt {
         TweetEvent tv=(TweetEvent)tuple.getValue(0);
         String threadIdStr=count+","+Thread.currentThread().getId()+","+threadid;
         tv.setGazetteerThreadID(threadIdStr);
+        count++;
         Document doc = tv.getDocument();
         long beforeProcessTS = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
         boolean isTerminated = false;
