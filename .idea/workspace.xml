@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ed566b5-c158-4cc9-be3e-b60fe09d822e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/GateMain.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" afterPath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" />
     </list>
@@ -96,17 +95,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IeStormTopology.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IeStormTopology.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+            <state relative-caret-position="1537">
+              <caret line="129" column="4" lean-forward="false" selection-start-line="129" selection-start-column="4" selection-end-line="129" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GateMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GateMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/GateMain.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
@@ -201,8 +200,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/TweetEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Persist_rich_Bolt.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/GateMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" />
       </list>
     </option>
   </component>
@@ -775,7 +774,7 @@
       <workItem from="1489934539461" duration="31549000" />
       <workItem from="1490079960412" duration="1847000" />
       <workItem from="1490084658111" duration="21784000" />
-      <workItem from="1490500467038" duration="24964000" />
+      <workItem from="1490500467038" duration="25318000" />
     </task>
     <task id="LOCAL-00001" summary="just testing by only using the tweet simulator and file persist">
       <created>1490089572119</created>
@@ -1029,15 +1028,22 @@
       <option name="project" value="LOCAL" />
       <updated>1490601277372</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Separate Gate">
+      <created>1490620742921</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1490620742921</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104273000" />
+    <option name="totallyTimeSpent" value="104627000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1060,7 +1066,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18293992" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18293992" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1131,7 +1137,8 @@
     <MESSAGE value="iterator removed" />
     <MESSAGE value="100 msg with corrected heading , some measures added" />
     <MESSAGE value="count added" />
-    <option name="LAST_COMMIT_MESSAGE" value="count added" />
+    <MESSAGE value="Separate Gate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Separate Gate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1528,18 +1535,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/GateMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1537">
+          <caret line="129" column="4" lean-forward="false" selection-start-line="129" selection-start-column="4" selection-end-line="129" selection-end-column="4" />
           <folding />
         </state>
       </provider>

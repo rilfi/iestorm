@@ -67,7 +67,7 @@ public class IeStormTopology implements Serializable {
 
     public static void main(String[] args) throws Exception {
 
-        try {
+        /*try {
             Gate.setGateHome(new File("/opt/gate-8.3-build5704-ALL"));
             Gate.init();
         } catch (GateException e) {
@@ -79,7 +79,7 @@ public class IeStormTopology implements Serializable {
             e.printStackTrace();
         } catch (MalformedURLException e) {
             e.printStackTrace();
-        }
+        }*/
 
 
         TopologyBuilder builder = new TopologyBuilder();
