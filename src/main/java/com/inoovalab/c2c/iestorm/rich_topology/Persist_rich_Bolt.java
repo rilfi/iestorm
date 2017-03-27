@@ -19,17 +19,19 @@ public class Persist_rich_Bolt extends BaseRichBolt {
     OutputCollector _collector;
     private BufferedWriter writer;
     boolean isTerminated;
+    long count;
 
     @Override
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
         String filepath = (String) map.get("persist.file");
+        count=0;
         String absoluteFileName = filepath + "." + topologyContext.getThisTaskIndex();
         this._collector = outputCollector;
         isTerminated=false;
         try {
             writer = new BufferedWriter(new FileWriter(absoluteFileName));
-            String head="tweet,msgId,started,tubleStarted,tokennizerThreadID,tokenizerTT,tokenizerAT,gazetteerThreadID,gazetteerTT"
-                      +",gazetteerAT,annotationThreadID,annotatedMap,annotationTT,annotationAT";
+            String head="msgId,started,tubleStarted,tokennizerThreadID,tokenizerTT,tokenizerAT,gazetteerThreadID,gazetteerTT"
+                      +",gazetteerAT,annotationThreadID,annotationTT,annotationAT,tupleEnded,tupleConsumed";
             writer.write(head);
             writer.newLine();
         } catch (IOException e) {
@@ -41,8 +43,11 @@ public class Persist_rich_Bolt extends BaseRichBolt {
     public void execute(Tuple tuple) {
         TweetEvent tv = (TweetEvent) tuple.getValue(0);
         try {
+            long tupleEnded=System.nanoTime()-(24 * 60 * 60 * 1000 * 1000 * 1000);
+            long tupleconsumedTime=tupleEnded-tv.getTubleStarted();
+            long avarageTime=(tupleEnded-tv.getStarted())/++count;
 
-            writer.write(tv.toString());
+            writer.write(tv.toString()+","+tupleEnded+","+tupleconsumedTime+","+avarageTime);
             writer.newLine();
 
             writer.flush();

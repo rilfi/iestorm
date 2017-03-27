@@ -168,11 +168,10 @@ public class TweetEvent implements Serializable {
     }*/
 @Override
 public String toString() {
-    return  tweet + ","+ msgId +","+ started + tubleStarted +"," +tokennizerThreadID+","+ tokenizerTT +
+    return   msgId +","+ started +","+ tubleStarted +"," +tokennizerThreadID+","+ tokenizerTT +
             "," + tokenizerAT +","+gazetteerThreadID+
             "," + gazetteerTT +
             "," + gazetteerAT +","+annotationThreadID+
-            "," + annotatedMap +
             "," + annotationTT +
             "," + annotationAT ;
 }
