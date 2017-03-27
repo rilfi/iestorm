@@ -126,5 +126,6 @@ public class IeStormTopology implements Serializable {
             printMetrics(client, name);
         }
         kill(client, name);
+        localCluster.shutdown();
     }
 }
