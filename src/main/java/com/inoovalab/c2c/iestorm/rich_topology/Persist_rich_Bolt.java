@@ -30,8 +30,8 @@ public class Persist_rich_Bolt extends BaseRichBolt {
         isTerminated=false;
         try {
             writer = new BufferedWriter(new FileWriter(absoluteFileName));
-            String head="msgId,started,tubleStarted,tokennizerThreadID,tokenizerTT,tokenizerAT,gazetteerThreadID,gazetteerTT"
-                      +",gazetteerAT,annotationThreadID,annotationTT,annotationAT,tupleEnded,tupleConsumed";
+            String head="msgId,started,tubleStarted,tcount,tokennizerThreadID,tid,tokenizerTT,tokenizerAT,gcount,gazetteerThreadID,gid,gazetteerTT"
+                      +",gazetteerAT,acount,annotationThreadID,aid,annotationTT,annotationAT,tupleEnded,tupleConsumed";
             writer.write(head);
             writer.newLine();
         } catch (IOException e) {
