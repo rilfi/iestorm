@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ed566b5-c158-4cc9-be3e-b60fe09d822e" name="Default" comment="threadId added">
+    <list default="true" id="2ed566b5-c158-4cc9-be3e-b60fe09d822e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" afterPath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java" afterPath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Simulated_Tweet_rich_Spout.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Simulated_Tweet_rich_Spout.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="76" column="56" lean-forward="false" selection-start-line="76" selection-start-column="56" selection-end-line="76" selection-end-column="56" />
+            <state relative-caret-position="-83">
+              <caret line="40" column="7" lean-forward="false" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -95,10 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IeStormTopology.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IeStormTopology.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
+            <state relative-caret-position="525">
               <caret line="128" column="32" lean-forward="false" selection-start-line="128" selection-start-column="32" selection-end-line="128" selection-end-column="32" />
               <folding />
             </state>
@@ -194,13 +194,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/basic_topology/Simulated_Tweet_Spout.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/basic_topology/Tokenizer_Bolt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/LocalTopologyRunner_rich.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Gazetteer_rich_Bolt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Annotation_rich_Bolt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/TweetEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Persist_rich_Bolt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java" />
       </list>
     </option>
   </component>
@@ -264,10 +264,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2391" />
-    <option name="y" value="142" />
-    <option name="width" value="1726" />
-    <option name="height" value="928" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -803,7 +803,7 @@
       <workItem from="1489934539461" duration="31549000" />
       <workItem from="1490079960412" duration="1847000" />
       <workItem from="1490084658111" duration="21784000" />
-      <workItem from="1490500467038" duration="18531000" />
+      <workItem from="1490500467038" duration="19174000" />
     </task>
     <task id="LOCAL-00001" summary="just testing by only using the tweet simulator and file persist">
       <created>1490089572119</created>
@@ -1029,15 +1029,22 @@
       <option name="project" value="LOCAL" />
       <updated>1490591427045</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="localcluster shutdown">
+      <created>1490592863715</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1490592863715</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97840000" />
+    <option name="totallyTimeSpent" value="98483000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2391" y="142" width="1726" height="928" extended-state="6" />
-    <editor active="false" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1056,11 +1063,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12975098" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11211778" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20641646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18293992" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1127,7 +1134,8 @@
     <MESSAGE value="to a new branch" />
     <MESSAGE value="time reduces" />
     <MESSAGE value="threadId added" />
-    <option name="LAST_COMMIT_MESSAGE" value="threadId added" />
+    <MESSAGE value="localcluster shutdown" />
+    <option name="LAST_COMMIT_MESSAGE" value="localcluster shutdown" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1458,14 +1466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="76" column="56" lean-forward="false" selection-start-line="76" selection-start-column="56" selection-end-line="76" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1533,8 +1533,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
+        <state relative-caret-position="525">
           <caret line="128" column="32" lean-forward="false" selection-start-line="128" selection-start-column="32" selection-end-line="128" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-83">
+          <caret line="40" column="7" lean-forward="false" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
           <folding />
         </state>
       </provider>

@@ -70,7 +70,7 @@ public class Simulated_Tweet_rich_Spout extends BaseRichSpout {
 
 
             TweetEvent tv = new TweetEvent();
-            tv.setTweet(itr.next());
+            tv.setTweet("lg gx im selling");
             tv.setStarted(started);
             tv.setTubleStarted(System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000));
             tv.setMsgId(++msgId);
