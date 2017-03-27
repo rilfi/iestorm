@@ -109,11 +109,11 @@ public class IeStormTopology implements Serializable {
         LocalCluster localCluster = new LocalCluster();
         localCluster.submitTopology(name, conf, builder.createTopology());
 
-        /*Utils.sleep(100000);
-        localCluster.shutdown();*/
+        Utils.sleep(100000);
+        localCluster.shutdown();
 
 
-        Map clusterConf = Utils.readStormConfig();
+        /*Map clusterConf = Utils.readStormConfig();
         clusterConf.putAll(Utils.readCommandLineOpts());
         Nimbus.Client client = NimbusClient.getConfiguredClient(clusterConf).getClient();
 
@@ -126,6 +126,6 @@ public class IeStormTopology implements Serializable {
             printMetrics(client, name);
         }
         kill(client, name);
-        localCluster.shutdown();
+        localCluster.shutdown();*/
     }
 }
