@@ -25,41 +25,48 @@ import java.util.Map;
  */
 public class Simulated_Tweet_rich_Spout extends BaseRichSpout {
     private static final Logger LOGGER = LogManager.getLogger(Simulated_Tweet_Spout.class);
+    List<String> tweets;
+    Iterator<String> itr;
+    int i;
     private long msgId = 0;
     private String fileName;
     private long started;
-    List<String> tweets;
-    Iterator<String> itr;
     private SpoutOutputCollector outputCollector;
-
-
 
     @Override
     public void open(Map map, TopologyContext topologyContext, SpoutOutputCollector spoutOutputCollector) {
         this.outputCollector = spoutOutputCollector;
-       // this.fileName = (String) map.get("tweetFile");
-        started=System.nanoTime()-(24*60*60*1000*1000*1000);
+        // this.fileName = (String) map.get("tweetFile");
+        started = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
         List<String> tweets = new ArrayList<>();
-        int i=0;
-        while (i<100){
+        i = 0;
+       /* while (i<100){
             i++;
             tweets.add("lg gx im selling");
         }
 
-        /*try {
+        *//*try {
             tweets = Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }*//*
         itr = tweets.iterator();
-        System.out.println(fileName);
+        System.out.println(fileName);*/
 
     }
 
     @Override
     public void nextTuple() {
         // Map<String,Object>emitingMap= new HashMap<>();
-       if (itr.hasNext()) {
+        ++i;
+/*        while (i<100){
+            i++;
+            tweets.add("lg gx im selling");
+        }
+        itr = tweets.iterator();
+        //System.out.println(fileName);
+       if (itr.hasNext()) {*/
+        if (i < 100000) {
 
 
             TweetEvent tv = new TweetEvent();
@@ -67,12 +74,10 @@ public class Simulated_Tweet_rich_Spout extends BaseRichSpout {
             tv.setStarted(started);
             tv.setTubleStarted(System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000));
             tv.setMsgId(++msgId);
-            outputCollector.emit(new Values(tv),msgId);
-
+            outputCollector.emit(new Values(tv), msgId);
         }
 
-
-
+        // }
 
 
         //outputCollector.emit(new Values(tweet));

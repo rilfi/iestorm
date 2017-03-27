@@ -26,6 +26,7 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
     SerialAnalyserController tokenizerPR;
     private long initiatatedTime;
     private long count;
+    private long threadid;
     //Corpus corpus = null;
 
     private SerialAnalyserController loadController() {
@@ -67,6 +68,7 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
 
         };
         tokenizerPR = controller.get();
+        threadid=Thread.currentThread().getId();
         initiatatedTime = System.nanoTime()-(24*60*60*1000*1000*1000);
 
 
@@ -76,6 +78,8 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
     public void execute(Tuple tuple) {
         System.out.println("**************"+tuple.toString());
         TweetEvent tv=(TweetEvent)tuple.getValue(0) ;
+        String threadIdStr=count+","+Thread.currentThread().getId()+","+threadid;
+        tv.setTokennizerThreadID(threadIdStr);
 
        // Map<String,Object>emitingMap=(Map<String, Object>) tuple.getValue(0);
         //System.out.println("---#############------"+emitingMap.keySet());

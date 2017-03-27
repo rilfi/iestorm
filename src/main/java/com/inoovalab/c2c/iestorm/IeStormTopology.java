@@ -96,7 +96,7 @@ public class IeStormTopology implements Serializable {
         conf.registerSerialization(TweetEvent.class);
         // conf.put("tweetFile", "tweet50.txt");
         //conf.setDebug(true);
-        conf.put("persist.file", "output50.txt");
+        conf.put("persist.file", "output100.txt");
 
 
         String name = "IEStorm";

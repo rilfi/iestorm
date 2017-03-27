@@ -10,6 +10,7 @@ import java.util.Set;
  * Created by rilfi on 3/20/2017.
  */
 public class TweetEvent implements Serializable {
+    Map<String, Set<String>> annotatedMap;
     private String tweet;
     private long msgId;
     private long started;
@@ -19,9 +20,36 @@ public class TweetEvent implements Serializable {
     private long tokenizerAT;
     private long gazetteerTT;
     private long gazetteerAT;
-    Map<String,Set<String>> annotatedMap;
     private long annotationTT;
     private long annotationAT;
+    private String tokennizerThreadID;
+    private String gazetteerThreadID;
+    private String annotationThreadID;
+
+    public String getGazetteerThreadID() {
+        return gazetteerThreadID;
+    }
+
+    public void setGazetteerThreadID(String gazetteerThreadID) {
+        this.gazetteerThreadID = gazetteerThreadID;
+    }
+
+    public String getAnnotationThreadID() {
+        return annotationThreadID;
+    }
+
+    public void setAnnotationThreadID(String annotationThreadID) {
+        this.annotationThreadID = annotationThreadID;
+    }
+
+
+    public String getTokennizerThreadID() {
+        return tokennizerThreadID;
+    }
+
+    public void setTokennizerThreadID(String tokennizerThreadID) {
+        this.tokennizerThreadID = tokennizerThreadID;
+    }
 
 
     public String getTweet() {
@@ -109,7 +137,6 @@ public class TweetEvent implements Serializable {
     }
 
 
-
     public void setAnnotationTT(long annotationTT) {
         this.annotationTT = annotationTT;
     }
@@ -122,7 +149,7 @@ public class TweetEvent implements Serializable {
         this.annotationAT = annotationAT;
     }
 
-    @Override
+/*    @Override
     public String toString() {
         return "TweetEvent{" +
                 "tweet='" + tweet + '\'' +
@@ -138,5 +165,15 @@ public class TweetEvent implements Serializable {
                 ", annotationTT=" + annotationTT +
                 ", annotationAT=" + annotationAT +
                 '}';
-    }
+    }*/
+@Override
+public String toString() {
+    return  tweet + ","+ msgId +","+ started + tubleStarted +"," +tokennizerThreadID+","+ tokenizerTT +
+            "," + tokenizerAT +","+gazetteerThreadID+
+            "," + gazetteerTT +
+            "," + gazetteerAT +","+annotationThreadID+
+            "," + annotatedMap +
+            "," + annotationTT +
+            "," + annotationAT ;
+}
 }

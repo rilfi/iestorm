@@ -28,6 +28,10 @@ public class Persist_rich_Bolt extends BaseRichBolt {
         isTerminated=false;
         try {
             writer = new BufferedWriter(new FileWriter(absoluteFileName));
+            String head="tweet,msgId,started,tubleStarted,tokennizerThreadID,tokenizerTT,tokenizerAT,gazetteerThreadID,gazetteerTT"
+                      +",gazetteerAT,annotationThreadID,annotatedMap,annotationTT,annotationAT";
+            writer.write(head);
+            writer.newLine();
         } catch (IOException e) {
             throw new RuntimeException("Problem opening file " + absoluteFileName, e);
         }

@@ -27,6 +27,7 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
     Corpus corpus;
     private long initiatatedTime;
     private long count;
+    private long threadid;
 
     private SerialAnalyserController loadController() {
         SerialAnalyserController annieController = null;
@@ -67,6 +68,7 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
             e.printStackTrace();
         }
         gazetteerPR = controller.get();
+        threadid=Thread.currentThread().getId();
         initiatatedTime = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
 
 
@@ -76,6 +78,8 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
     public void execute(Tuple tuple) {
         TweetEvent tv=(TweetEvent)tuple.getValue(0);
        // Map<String,Object>emitingMap=(Map<String, Object>) tuple.getValue(0);
+        String threadIdStr=count+","+Thread.currentThread().getId()+","+threadid;
+        tv.setGazetteerThreadID(threadIdStr);
         Document doc = tv.getDocument();
 
         long beforeProcessTS = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);

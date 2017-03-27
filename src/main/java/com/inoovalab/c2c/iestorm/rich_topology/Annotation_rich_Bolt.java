@@ -24,6 +24,7 @@ public class Annotation_rich_Bolt extends BaseRichBolt {
     OutputCollector _collector;
     private long initiatatedTime;
     private long count;
+    private long threadid;
 
 
     public Map<String, Set<String>> getAnnotatedMap(Document doc, String tweets)
@@ -149,6 +150,7 @@ public class Annotation_rich_Bolt extends BaseRichBolt {
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
         _collector = outputCollector;
         count = 0;
+        threadid=Thread.currentThread().getId();
         initiatatedTime = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
 
 
@@ -157,6 +159,8 @@ public class Annotation_rich_Bolt extends BaseRichBolt {
     @Override
     public void execute(Tuple tuple) {
         TweetEvent tv=(TweetEvent)tuple.getValue(0);
+        String threadIdStr=count+","+Thread.currentThread().getId()+","+threadid;
+        tv.setGazetteerThreadID(threadIdStr);
         Document doc = tv.getDocument();
         long beforeProcessTS = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
         boolean isTerminated = false;
