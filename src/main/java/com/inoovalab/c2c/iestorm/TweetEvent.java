@@ -166,13 +166,17 @@ public class TweetEvent implements Serializable {
                 ", annotationAT=" + annotationAT +
                 '}';
     }*/
-@Override
-public String toString() {
-    return   msgId +","+ started +","+ tubleStarted +"," +tokennizerThreadID+","+ tokenizerTT +
-            "," + tokenizerAT +","+gazetteerThreadID+
-            "," + gazetteerTT +
-            "," + gazetteerAT +","+annotationThreadID+
-            "," + annotationTT +
-            "," + annotationAT ;
-}
+/*@Override
+    public String toString() {
+        return   msgId +","+ started +","+ tubleStarted +"," +tokennizerThreadID+","+ tokenizerTT +
+                "," + tokenizerAT +","+gazetteerThreadID+
+                "," + gazetteerTT +
+                "," + gazetteerAT +","+annotationThreadID+
+                "," + annotationTT +
+                "," + annotationAT ;
+    }*/
+    @Override
+    public String toString() {
+        return   "annotationThreadID,"+annotationThreadID+",annotationTT," + annotationTT + "annotationAT ," + annotationAT ;
+    }
 }

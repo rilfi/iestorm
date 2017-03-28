@@ -33,9 +33,10 @@ public class Persist_rich_Bolt extends BaseRichBolt {
             /*String head="msgId,started,tubleStarted,tcount,tokennizerThreadID,tid,tokenizerTT,tokenizerAT,gcount,gazetteerThreadID,gid,gazetteerTT"
                       +",gazetteerAT,acount,annotationThreadID,aid,annotationTT,annotationAT,tupleEnded,tupleConsumed"
                     +",avarageTime";*/
-            String head="msgId,started,tubleStarted,tcount,tokennizerThreadID,tid,tokenizerTT,tokenizerAT,gcount,gazetteerThreadID,gid,gazetteerTT"
-                    +",gazetteerAT,acount,annotationThreadID,aid,annotationTT,annotationAT";
-            writer.write(head);
+            /*String head="msgId,started,tubleStarted,tcount,tokennizerThreadID,tid,tokenizerTT,tokenizerAT,gcount,gazetteerThreadID,gid,gazetteerTT"
+                    +",gazetteerAT,acount,annotationThreadID,aid,annotationTT,annotationAT";*/
+           // String head="acount,annotationThreadID,annotationTT,annotationAT";
+           // writer.write(head);
             writer.newLine();
         } catch (IOException e) {
             throw new RuntimeException("Problem opening file " + absoluteFileName, e);
