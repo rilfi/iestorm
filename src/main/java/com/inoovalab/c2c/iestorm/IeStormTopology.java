@@ -96,7 +96,7 @@ public class IeStormTopology implements Serializable {
         conf.registerSerialization(TweetEvent.class);
         // conf.put("tweetFile", "tweet50.txt");
         //conf.setDebug(true);
-        conf.put("persist.file", "output100.txt");
+        conf.put("persist.file", "output100.csv");
 
 
         String name = "IEStorm";
@@ -104,7 +104,7 @@ public class IeStormTopology implements Serializable {
             name = args[0];
         }
 
-        conf.setNumWorkers(1);
+        //conf.setNumWorkers(1);
        // StormSubmitter.submitTopologyWithProgressBar(name, conf, builder.createTopology());
         LocalCluster localCluster = new LocalCluster();
         localCluster.submitTopology(name, conf, builder.createTopology());

@@ -54,7 +54,7 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
     @Override
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
         _collector = outputCollector;
-        count=0;
+        count=1;
         /*try {
             corpus=Factory.newCorpus("SingleTweet");
         } catch (ResourceInstantiationException e) {
@@ -99,7 +99,8 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
 
 
             Long afterProcessTS = System.nanoTime()-(24*60*60*1000*1000*1000);
-            long averageTS=(afterProcessTS-initiatatedTime)/++count;
+            long averageTS=(afterProcessTS-initiatatedTime)/count;
+            count++;
             long timeTaken = afterProcessTS - beforeProcessTS;
             /*emitingMap.put("document",doc);
             emitingMap.put("TokenizerTT",timeTaken);

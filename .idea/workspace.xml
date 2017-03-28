@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2ed566b5-c158-4cc9-be3e-b60fe09d822e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" afterPath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Annotation_rich_Bolt.java" afterPath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Annotation_rich_Bolt.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Gazetteer_rich_Bolt.java" afterPath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Gazetteer_rich_Bolt.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Persist_rich_Bolt.java" afterPath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Persist_rich_Bolt.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java" afterPath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt.java" afterPath="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,8 +28,8 @@
       <file leaf-file-name="Simulated_Tweet_rich_Spout.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="68" column="22" lean-forward="true" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+            <state relative-caret-position="543">
+              <caret line="77" column="9" lean-forward="true" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -34,8 +38,8 @@
       <file leaf-file-name="TweetEvent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/TweetEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-199">
-              <caret line="110" column="25" lean-forward="false" selection-start-line="110" selection-start-column="25" selection-end-line="110" selection-end-column="25" />
+            <state relative-caret-position="747">
+              <caret line="173" column="45" lean-forward="false" selection-start-line="173" selection-start-column="45" selection-end-line="173" selection-end-column="45" />
               <folding>
                 <element signature="e#746#747#0" expanded="true" />
                 <element signature="e#786#787#0" expanded="true" />
@@ -57,19 +61,21 @@
       <file leaf-file-name="Gazetteer_rich_Bolt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Gazetteer_rich_Bolt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="80" column="37" lean-forward="false" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+            <state relative-caret-position="374">
+              <caret line="97" column="21" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Annotation_rich_Bolt.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Annotation_rich_Bolt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Annotation_rich_Bolt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="161" column="80" lean-forward="false" selection-start-line="161" selection-start-column="72" selection-end-line="161" selection-end-column="80" />
-              <folding />
+            <state relative-caret-position="638">
+              <caret line="172" column="24" lean-forward="false" selection-start-line="172" selection-start-column="24" selection-end-line="172" selection-end-column="24" />
+              <folding>
+                <element signature="method#getAnnotatedMap#0;class#Annotation_rich_Bolt#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,8 +83,8 @@
       <file leaf-file-name="Persist_rich_Bolt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Persist_rich_Bolt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="47" column="64" lean-forward="true" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
+            <state relative-caret-position="572">
+              <caret line="36" column="92" lean-forward="false" selection-start-line="36" selection-start-column="92" selection-end-line="36" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -96,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IeStormTopology.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IeStormTopology.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="79" column="43" lean-forward="true" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="43" />
+            <state relative-caret-position="1803">
+              <caret line="104" column="9" lean-forward="true" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -119,8 +125,8 @@
       <file leaf-file-name="Tokenizer_rich_Bolt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-660">
-              <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="22" />
+            <state relative-caret-position="-177">
+              <caret line="59" column="18" lean-forward="false" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -195,14 +201,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/basic_topology/Simulated_Tweet_Spout.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/basic_topology/Tokenizer_Bolt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/LocalTopologyRunner_rich.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Gazetteer_rich_Bolt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/TweetEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/GateMain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Persist_rich_Bolt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Gazetteer_rich_Bolt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Annotation_rich_Bolt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Persist_rich_Bolt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java" />
       </list>
     </option>
   </component>
@@ -805,7 +811,7 @@
       <workItem from="1489934539461" duration="31549000" />
       <workItem from="1490079960412" duration="1847000" />
       <workItem from="1490084658111" duration="21784000" />
-      <workItem from="1490500467038" duration="28020000" />
+      <workItem from="1490500467038" duration="30599000" />
     </task>
     <task id="LOCAL-00001" summary="just testing by only using the tweet simulator and file persist">
       <created>1490089572119</created>
@@ -1080,11 +1086,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490621630466</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="count incriment">
+      <created>1490623721774</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1490623721774</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107329000" />
+    <option name="totallyTimeSpent" value="109908000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2409" y="46" width="2418" height="1318" extended-state="6" />
@@ -1184,7 +1197,8 @@
     <MESSAGE value="count added" />
     <MESSAGE value="Separate Gate" />
     <MESSAGE value="old method local clustor" />
-    <option name="LAST_COMMIT_MESSAGE" value="old method local clustor" />
+    <MESSAGE value="count incriment" />
+    <option name="LAST_COMMIT_MESSAGE" value="count incriment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1209,7 +1223,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3828">
           <caret line="189" column="39" lean-forward="true" selection-start-line="189" selection-start-column="39" selection-end-line="189" selection-end-column="39" />
-          <folding />
+          <folding>
+            <element signature="method#getAnnotatedMap#0;class#Annotation_rich_Bolt#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1508,24 +1524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Gazetteer_rich_Bolt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="80" column="37" lean-forward="false" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-660">
-          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/LocalTopologyRunner_rich.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
@@ -1544,26 +1542,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Gazetteer_rich_Bolt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="68" column="22" lean-forward="true" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+        <state relative-caret-position="374">
+          <caret line="97" column="21" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Annotation_rich_Bolt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="79" column="43" lean-forward="true" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="638">
+          <caret line="172" column="24" lean-forward="false" selection-start-line="172" selection-start-column="24" selection-end-line="172" selection-end-column="24" />
+          <folding>
+            <element signature="method#getAnnotatedMap#0;class#Annotation_rich_Bolt#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/TweetEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-199">
-          <caret line="110" column="25" lean-forward="false" selection-start-line="110" selection-start-column="25" selection-end-line="110" selection-end-column="25" />
+        <state relative-caret-position="747">
+          <caret line="173" column="45" lean-forward="false" selection-start-line="173" selection-start-column="45" selection-end-line="173" selection-end-column="45" />
           <folding>
             <element signature="e#746#747#0" expanded="true" />
             <element signature="e#786#787#0" expanded="true" />
@@ -1581,18 +1581,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Tokenizer_rich_Bolt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-177">
+          <caret line="59" column="18" lean-forward="false" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Persist_rich_Bolt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="47" column="64" lean-forward="true" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
+        <state relative-caret-position="572">
+          <caret line="36" column="92" lean-forward="false" selection-start-line="36" selection-start-column="92" selection-end-line="36" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Annotation_rich_Bolt.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/rich_topology/Simulated_Tweet_rich_Spout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="161" column="80" lean-forward="false" selection-start-line="161" selection-start-column="72" selection-end-line="161" selection-end-column="80" />
+        <state relative-caret-position="543">
+          <caret line="77" column="9" lean-forward="true" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/inoovalab/c2c/iestorm/IeStormTopology.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1803">
+          <caret line="104" column="9" lean-forward="true" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
           <folding />
         </state>
       </provider>

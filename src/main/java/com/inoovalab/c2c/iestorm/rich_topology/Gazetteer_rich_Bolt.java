@@ -54,7 +54,7 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
     @Override
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
         _collector = outputCollector;
-        count = 0;
+        count = 1;
         ThreadLocal<SerialAnalyserController> controller = new ThreadLocal<SerialAnalyserController>() {
 
             protected SerialAnalyserController initialValue() {
@@ -93,7 +93,8 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
             gazetteerPR.execute();
             //emitingMap.remove("document");
             Long afterProcessTS = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
-            long averageTS = (afterProcessTS - initiatatedTime) / ++count;
+            long averageTS = (afterProcessTS - initiatatedTime) / count;
+            count++;
             long timeTaken = afterProcessTS - beforeProcessTS;
             /*emitingMap.put("document",doc);
             emitingMap.put("gazetteerTT",timeTaken);

@@ -66,7 +66,7 @@ public class Simulated_Tweet_rich_Spout extends BaseRichSpout {
         itr = tweets.iterator();
         //System.out.println(fileName);
        if (itr.hasNext()) {*/
-        if (i < 100) {
+        if (i < 10) {
 
 
             TweetEvent tv = new TweetEvent();

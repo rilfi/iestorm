@@ -30,8 +30,11 @@ public class Persist_rich_Bolt extends BaseRichBolt {
         isTerminated=false;
         try {
             writer = new BufferedWriter(new FileWriter(absoluteFileName));
+            /*String head="msgId,started,tubleStarted,tcount,tokennizerThreadID,tid,tokenizerTT,tokenizerAT,gcount,gazetteerThreadID,gid,gazetteerTT"
+                      +",gazetteerAT,acount,annotationThreadID,aid,annotationTT,annotationAT,tupleEnded,tupleConsumed"
+                    +",avarageTime";*/
             String head="msgId,started,tubleStarted,tcount,tokennizerThreadID,tid,tokenizerTT,tokenizerAT,gcount,gazetteerThreadID,gid,gazetteerTT"
-                      +",gazetteerAT,acount,annotationThreadID,aid,annotationTT,annotationAT,tupleEnded,tupleConsumed";
+                    +",gazetteerAT,acount,annotationThreadID,aid,annotationTT,annotationAT";
             writer.write(head);
             writer.newLine();
         } catch (IOException e) {
@@ -48,7 +51,8 @@ public class Persist_rich_Bolt extends BaseRichBolt {
             long avarageTime=(tupleEnded-tv.getStarted())/count;
             count++;
 
-            writer.write(tv.toString()+","+tupleEnded+","+tupleconsumedTime+","+avarageTime);
+            //writer.write(tv.toString()+","+tupleEnded+","+tupleconsumedTime+","+avarageTime);
+            writer.write(tv.toString());
             writer.newLine();
 
             writer.flush();
