@@ -17,26 +17,26 @@ import java.util.Map;
  */
 public class Persist_rich_Bolt extends BaseRichBolt {
     OutputCollector _collector;
-    private BufferedWriter writer;
     boolean isTerminated;
     long count;
+    private BufferedWriter writer;
 
     @Override
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
         String filepath = (String) map.get("persist.file");
-        count=1;
+        count = 1;
         String absoluteFileName = filepath + "." + topologyContext.getThisTaskIndex();
         this._collector = outputCollector;
-        isTerminated=false;
+        isTerminated = false;
         try {
             writer = new BufferedWriter(new FileWriter(absoluteFileName));
-            String head="msgId,started,tubleStarted,tcount,tokennizerThreadID,tid,tokenizerTT,tokenizerAT,gcount,gazetteerThreadID,gid,gazetteerTT"
-                      +",gazetteerAT,acount,annotationThreadID,aid,annotationTT,annotationAT,tupleEnded,tupleConsumed"
-                    +",avarageTime";
+            String head = "msgId,started,tubleStarted,tcount,tokennizerThreadID,tid,tokenizerTT,tokenizerAT,gcount,gazetteerThreadID,gid,gazetteerTT"
+                    + ",gazetteerAT,acount,annotationThreadID,aid,annotationTT,annotationAT,tupleEnded,tupleConsumed"
+                    + ",avarageTime";
             /*String head="msgId,started,tubleStarted,tcount,tokennizerThreadID,tid,tokenizerTT,tokenizerAT,gcount,gazetteerThreadID,gid,gazetteerTT"
                     +",gazetteerAT,acount,annotationThreadID,aid,annotationTT,annotationAT";*/
-           // String head="acount,annotationThreadID,annotationTT,annotationAT";
-           // writer.write(head);
+            // String head="acount,annotationThreadID,annotationTT,annotationAT";
+            writer.write(head);
             writer.newLine();
         } catch (IOException e) {
             throw new RuntimeException("Problem opening file " + absoluteFileName, e);
@@ -47,33 +47,28 @@ public class Persist_rich_Bolt extends BaseRichBolt {
     public void execute(Tuple tuple) {
         TweetEvent tv = (TweetEvent) tuple.getValue(0);
         try {
-            long tupleEnded=System.nanoTime()-(24 * 60 * 60 * 1000 * 1000 * 1000);
-            long tupleconsumedTime=tupleEnded-tv.getTubleStarted();
-            long avarageTime=(tupleEnded-tv.getStarted())/count;
+            long tupleEnded = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
+            long tupleconsumedTime = tupleEnded - tv.getTubleStarted();
+            long avarageTime = (tupleEnded - tv.getStarted()) / count;
             count++;
 
-            writer.write(tv.toString()+","+tupleEnded+","+tupleconsumedTime+","+avarageTime);
+            writer.write(tv.toString() + "," + tupleEnded + "," + tupleconsumedTime + "," + avarageTime);
             //writer.write(tv.toString());
             writer.newLine();
 
             writer.flush();
-           _collector.ack(tuple);
+            _collector.ack(tuple);
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            isTerminated=true;
+            isTerminated = true;
 
-        }
-        finally {
-            if(isTerminated){
+        } finally {
+            if (isTerminated) {
                 _collector.fail(tuple);
             }
         }
-
-
-
 
 
     }
