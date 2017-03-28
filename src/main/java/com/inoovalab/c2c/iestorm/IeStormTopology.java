@@ -86,9 +86,9 @@ public class IeStormTopology implements Serializable {
 
         builder.setSpout("Simulated_Tweet", new Simulated_Tweet_rich_Spout(), 1);
 
-        builder.setBolt("Tokenizer_Bolt", new Tokenizer_rich_Bolt(), 4).shuffleGrouping("Simulated_Tweet");
-        builder.setBolt("Gazetteer_Bolt", new Gazetteer_rich_Bolt(), 4).shuffleGrouping("Tokenizer_Bolt");
-        builder.setBolt("Annotation_Bolt", new Annotation_rich_Bolt(), 4).shuffleGrouping("Gazetteer_Bolt");
+        builder.setBolt("Tokenizer_Bolt", new Tokenizer_rich_Bolt(), 10).shuffleGrouping("Simulated_Tweet");
+        builder.setBolt("Gazetteer_Bolt", new Gazetteer_rich_Bolt(), 10).shuffleGrouping("Tokenizer_Bolt");
+        builder.setBolt("Annotation_Bolt", new Annotation_rich_Bolt(), 10).shuffleGrouping("Gazetteer_Bolt");
         builder.setBolt("Persist_Bolt", new Persist_rich_Bolt(), 1).shuffleGrouping("Annotation_Bolt");
 
         Config conf = new Config();
