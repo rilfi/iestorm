@@ -10,6 +10,7 @@ import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.topology.base.BaseRichSpout;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Values;
+import org.apache.storm.utils.Utils;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -60,6 +61,7 @@ public class Simulated_Tweet_Spout extends BaseRichSpout {
                 tv.setStarted(started);
                 tv.setTubleStarted(System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000));
                 tv.setMsgId(++msgId);
+
             outputCollector.emit(new Values(tv),msgId);
 
         }

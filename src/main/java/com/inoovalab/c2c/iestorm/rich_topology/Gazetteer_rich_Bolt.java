@@ -80,11 +80,14 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
        // Map<String,Object>emitingMap=(Map<String, Object>) tuple.getValue(0);
         String threadIdStr=count+","+Thread.currentThread().getId()+","+threadid;
         tv.setGazetteerThreadID(threadIdStr);
-        Document doc = tv.getDocument();
-
-        long beforeProcessTS = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
         boolean isTerminated = false;
         try {
+        Document doc = tv.getDocument();
+        Corpus corpus=Factory.newCorpus("tempCorpus");
+
+        long beforeProcessTS = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
+
+
 
 
             corpus.add(doc);
@@ -105,6 +108,7 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
            _collector.emit(new Values(tv));
             _collector.ack(tuple);
             Factory.deleteResource(doc);
+            Factory.deleteResource(corpus);
             //doc.cleanup();
 
         } catch (ExecutionException e) {

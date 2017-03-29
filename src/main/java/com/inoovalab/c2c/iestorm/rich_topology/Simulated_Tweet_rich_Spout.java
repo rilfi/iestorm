@@ -14,6 +14,7 @@ import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.topology.base.BaseRichSpout;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Values;
+import org.apache.storm.utils.Utils;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -66,7 +67,7 @@ public class Simulated_Tweet_rich_Spout extends BaseRichSpout {
         itr = tweets.iterator();
         //System.out.println(fileName);
        if (itr.hasNext()) {*/
-        if (i < 100000) {
+        if (i < 10000) {
 
 
             TweetEvent tv = new TweetEvent();
@@ -75,6 +76,7 @@ public class Simulated_Tweet_rich_Spout extends BaseRichSpout {
             tv.setTubleStarted(System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000));
             tv.setMsgId(++msgId);
             outputCollector.emit(new Values(tv), msgId);
+            Utils.sleep(1);
         }
 
         // }
