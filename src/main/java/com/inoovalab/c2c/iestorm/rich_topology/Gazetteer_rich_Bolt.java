@@ -24,7 +24,7 @@ import java.util.Map;
 public class Gazetteer_rich_Bolt extends BaseRichBolt {
     OutputCollector _collector;
     SerialAnalyserController gazetteerPR;
-    Corpus corpus;
+   // Corpus corpus;
     private long initiatatedTime;
     private long count;
     private long threadid;
@@ -62,11 +62,11 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
             }
 
         };
-        try {
+       /* try {
             corpus = Factory.newCorpus("gazetteerCorpus");
         } catch (ResourceInstantiationException e) {
             e.printStackTrace();
-        }
+        }*/
         gazetteerPR = controller.get();
         threadid=Thread.currentThread().getId();
         initiatatedTime = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
@@ -83,7 +83,7 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
         boolean isTerminated = false;
         try {
         Document doc = tv.getDocument();
-        Corpus corpus=Factory.newCorpus("tempCorpus");
+        Corpus corpus=Factory.newCorpus(String.valueOf(tv.getMsgId()));
 
         long beforeProcessTS = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
 
