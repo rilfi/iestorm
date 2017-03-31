@@ -109,7 +109,7 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
             tv.setTokenizerTT(timeTaken);
             tv.setTokenizerAT(averageTS);
             _collector.emit( new Values(tv));
-            _collector.ack(tuple);
+           // _collector.ack(tuple);
            Factory.deleteResource(doc);
            Factory.deleteResource(corpus);
 
@@ -127,7 +127,7 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
         }
         finally {
             if(isTerminated){
-                _collector.fail(tuple);
+               // _collector.fail(tuple);
             }
 
         }

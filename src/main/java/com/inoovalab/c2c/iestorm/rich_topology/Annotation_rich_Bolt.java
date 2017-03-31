@@ -179,7 +179,7 @@ public class Annotation_rich_Bolt extends BaseRichBolt {
                 tv.setAnnotationTT(timeTaken);
                 tv.setAnnotationAT(averageTS);
                _collector.emit( new Values(tv));
-                _collector.ack(tuple);
+               // _collector.ack(tuple);
 
             }
             else {
@@ -193,7 +193,7 @@ public class Annotation_rich_Bolt extends BaseRichBolt {
         }
         finally {
             if (isTerminated) {
-                _collector.fail(tuple);
+               // _collector.fail(tuple);
             }
 
         }

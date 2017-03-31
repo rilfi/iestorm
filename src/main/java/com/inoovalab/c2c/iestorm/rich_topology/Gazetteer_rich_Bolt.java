@@ -106,7 +106,7 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
             tv.setGazetteerTT(timeTaken);
             tv.setGazetteerAT(averageTS);
            _collector.emit(new Values(tv));
-            _collector.ack(tuple);
+           // _collector.ack(tuple);
             Factory.deleteResource(doc);
             Factory.deleteResource(corpus);
             //doc.cleanup();
@@ -122,7 +122,7 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
         finally
         {
             if (isTerminated) {
-                _collector.fail(tuple);
+               // _collector.fail(tuple);
             }
 
         }
