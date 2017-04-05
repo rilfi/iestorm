@@ -78,8 +78,7 @@ public class Gazetteer_rich_Bolt extends BaseRichBolt {
     public void execute(Tuple tuple) {
         TweetEvent tv=(TweetEvent)tuple.getValue(0);
        // Map<String,Object>emitingMap=(Map<String, Object>) tuple.getValue(0);
-        String threadIdStr=count+","+Thread.currentThread().getId()+","+threadid;
-        tv.setGazetteerThreadID(threadIdStr);
+        tv.setGazetteerThreadID(Thread.currentThread().getId());
         boolean isTerminated = false;
         try {
         Document doc = tv.getDocument();

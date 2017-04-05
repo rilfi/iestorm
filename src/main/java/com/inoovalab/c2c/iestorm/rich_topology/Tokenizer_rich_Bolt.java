@@ -78,8 +78,8 @@ public class Tokenizer_rich_Bolt extends BaseRichBolt {
     public void execute(Tuple tuple) {
         System.out.println("**************"+tuple.toString());
         TweetEvent tv=(TweetEvent)tuple.getValue(0) ;
-        String threadIdStr=count+","+Thread.currentThread().getId()+","+threadid;
-        tv.setTokennizerThreadID(threadIdStr);
+        tv.setTokennizerThreadID(Thread.currentThread().getId());
+        tv.setTcount(count);
 
        // Map<String,Object>emitingMap=(Map<String, Object>) tuple.getValue(0);
         //System.out.println("---#############------"+emitingMap.keySet());

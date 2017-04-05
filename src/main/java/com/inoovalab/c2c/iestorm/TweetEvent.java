@@ -22,32 +22,140 @@ public class TweetEvent implements Serializable {
     private long gazetteerAT;
     private long annotationTT;
     private long annotationAT;
-    private String tokennizerThreadID;
-    private String gazetteerThreadID;
-    private String annotationThreadID;
+    private long gcount;
+    private long acount;
+    private long tcount;
+    private long tokennizerThreadID;
+    private long gazetteerThreadID;
+    private long annotationThreadID;
+    private Map<String, String> productMap;
+    private String brand;
+    private String product;
+    private String model;
+    private String status;
+    private String userName;
+    private String tweetUrl;
+    private String location;
 
-    public String getGazetteerThreadID() {
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getTweetUrl() {
+        return tweetUrl;
+    }
+
+    public void setTweetUrl(String tweetUrl) {
+        this.tweetUrl = tweetUrl;
+    }
+
+
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getProduct() {
+        return product;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
+
+
+    public long getTcount() {
+        return tcount;
+    }
+
+    public void setTcount(long tcount) {
+        this.tcount = tcount;
+    }
+
+    public long getGcount() {
+        return gcount;
+    }
+
+    public void setGcount(long gcount) {
+        this.gcount = gcount;
+    }
+
+    public long getAcount() {
+        return acount;
+    }
+
+    public void setAcount(long acount) {
+        this.acount = acount;
+    }
+
+
+    public Map<String, String> getProductMap() {
+        return productMap;
+    }
+
+    public void setProductMap(Map<String, String> productMap) {
+        this.productMap = productMap;
+    }
+
+
+    public long getGazetteerThreadID() {
         return gazetteerThreadID;
     }
 
-    public void setGazetteerThreadID(String gazetteerThreadID) {
+    public void setGazetteerThreadID(long gazetteerThreadID) {
         this.gazetteerThreadID = gazetteerThreadID;
     }
 
-    public String getAnnotationThreadID() {
+    public long getAnnotationThreadID() {
         return annotationThreadID;
     }
 
-    public void setAnnotationThreadID(String annotationThreadID) {
+    public void setAnnotationThreadID(long annotationThreadID) {
         this.annotationThreadID = annotationThreadID;
     }
 
 
-    public String getTokennizerThreadID() {
+    public long getTokennizerThreadID() {
         return tokennizerThreadID;
     }
 
-    public void setTokennizerThreadID(String tokennizerThreadID) {
+    public void setTokennizerThreadID(long tokennizerThreadID) {
         this.tokennizerThreadID = tokennizerThreadID;
     }
 
@@ -149,31 +257,31 @@ public class TweetEvent implements Serializable {
         this.annotationAT = annotationAT;
     }
 
-/*    @Override
+    /*    @Override
+        public String toString() {
+            return "TweetEvent{" +
+                    "tweet='" + tweet + '\'' +
+                    ", msgId=" + msgId +
+                    ", started=" + started +
+                    ", tubleStarted=" + tubleStarted +
+                    //", document=" + document +
+                    ", tokenizerTT=" + tokenizerTT +
+                    ", tokenizerAT=" + tokenizerAT +
+                    ", gazetteerTT=" + gazetteerTT +
+                    ", gazetteerAT=" + gazetteerAT +
+                    ", annotatedMap=" + annotatedMap +
+                    ", annotationTT=" + annotationTT +
+                    ", annotationAT=" + annotationAT +
+                    '}';
+        }*/
+    @Override
     public String toString() {
-        return "TweetEvent{" +
-                "tweet='" + tweet + '\'' +
-                ", msgId=" + msgId +
-                ", started=" + started +
-                ", tubleStarted=" + tubleStarted +
-                //", document=" + document +
-                ", tokenizerTT=" + tokenizerTT +
-                ", tokenizerAT=" + tokenizerAT +
-                ", gazetteerTT=" + gazetteerTT +
-                ", gazetteerAT=" + gazetteerAT +
-                ", annotatedMap=" + annotatedMap +
-                ", annotationTT=" + annotationTT +
-                ", annotationAT=" + annotationAT +
-                '}';
-    }*/
-@Override
-    public String toString() {
-        return   msgId +","+ started +","+ tubleStarted +"," +tokennizerThreadID+","+ tokenizerTT +
-                "," + tokenizerAT +","+gazetteerThreadID+
+        return msgId + "," + started + "," + tubleStarted + "," + tokennizerThreadID + "," + tokenizerTT +
+                "," + tokenizerAT + "," + gazetteerThreadID +
                 "," + gazetteerTT +
-                "," + gazetteerAT +","+annotationThreadID+
+                "," + gazetteerAT + "," + annotationThreadID +
                 "," + annotationTT +
-                "," + annotationAT ;
+                "," + annotationAT;
     }
  /*   @Override
     public String toString() {

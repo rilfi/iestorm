@@ -3,7 +3,6 @@ package com.inoovalab.c2c.iestorm.rich_topology;
 import com.inoovalab.c2c.iestorm.TweetEvent;
 import gate.Annotation;
 import gate.AnnotationSet;
-import gate.Corpus;
 import gate.Document;
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
@@ -50,10 +49,12 @@ public class Annotation_rich_Bolt extends BaseRichBolt {
                                 try {
                                     String valueStr = lowerTweet.substring(startindex, endindex);
                                     if (lul.equals("model")) {
-                                        modelMap.put("product", a.getFeatures().get("minorType").toString().split("_")[1]);
+                                        valueStr += "_" + a.getFeatures().get("minorType").toString();
+                                        /*modelMap.put("product", a.getFeatures().get("minorType").toString().split("_")[1]);
                                         modelMap.put("brand", a.getFeatures().get("minorType").toString().split("_")[0]);
                                         modelMap.put("model", valueStr);
-                                        modelSet.add(modelMap);
+                                        modelSet.add(modelMap);*/
+
 
                                     }
                                     if (lul.equals("status")) {
@@ -159,8 +160,7 @@ public class Annotation_rich_Bolt extends BaseRichBolt {
     @Override
     public void execute(Tuple tuple) {
         TweetEvent tv=(TweetEvent)tuple.getValue(0);
-        String threadIdStr=count+","+Thread.currentThread().getId()+","+threadid;
-        tv.setAnnotationThreadID(threadIdStr);
+        tv.setAnnotationThreadID(Thread.currentThread().getId());
 
         Document doc = tv.getDocument();
         long beforeProcessTS = System.nanoTime() - (24 * 60 * 60 * 1000 * 1000 * 1000);
